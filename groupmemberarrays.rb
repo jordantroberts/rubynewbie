@@ -17,33 +17,34 @@
 # * Keep on asking the user for group numbers until the user enters
 #   `stop`.
 #
-puts "How many groups would you like?"
-groupno = gets.chomp.to_i
+puts "How many groups would you like?" #Asks the user for input
+groupno = gets.chomp.to_i #user inputs a number e.g. 3
 
-array = Array.new(groupno) { [] }
+array = Array.new(groupno) { [] } #a new array is created. Creating it this way to create an array with separate objects: So if group number was 3: Array.new(3) {[], [], []}
 
-puts "Names of group members?"
+puts "Names of group members?" #user then asked for the names of the group members
 count = 0
-while input_name = gets.chomp
-  if input_name != "stop"
+while input_name = gets.chomp #loop begins
+  if input_name != "stop" #the loop continues as long as the user does not enter "stop"
 
-    puts "Names of group members?"
-    array[count] << input_name
-    count += 1
-    count = 0 if count == groupno
-  elsif input_name == "stop"
+    puts "Names of group members?" #as long as the user doesn't enter stop, they're continually asked for names
+    array[count] << input_name #counter used to access the arrays. So array[0] put in name, array [1] put in name, array [2] put in name.
+    count += 1 #to move on to the next group in the array
+    count = 0 if count == groupno #reset the counter to 0 if the array it is accessing = the group name. E.g. 3 groups. Will only be indexes 0, 1 and 2 for names to go into. If count gets to 3 (same as number of groups), start again at 0 and add names in there again.
+  elsif input_name == "stop" #we don't want to end it if they put stop, or add stop as a name. So if they put in stop we start a nested loop as follows:
 
     while true do
-      puts "Please say a group number and I'll tell you who is in the group"
-      n = gets.chomp
-      if n == "stop"
+      puts "Please say a group number and I'll tell you who is in the group" #asking for a group number
+      n = gets.chomp #user inputs the number of the group
+      if n == "stop" #whole program breaks if stop
         break
-      elsif puts array[n.to_i - 1].join(", ")
-      end
-    end
+      elsif puts array[n.to_i - 1].join(", ") #if it's a number they have inputted, we print the array of names to the console. As the instructions state that the groups are 1 indexed, we -1. E.g. if they put in group 2, they will mean our group 1. We combine the names with a comma and a space with the .join.
+      end #end of if/else
+    end #end of nested while loop
     break
-  end
-end
+  end #end of earlier if else
+end #loop ends
+
 # * Example output
 #   ```
 #   Enter number of groups
