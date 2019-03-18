@@ -1,4 +1,3 @@
-Dog = Class.new
 
 class Dog
   def bark
@@ -7,4 +6,14 @@ class Dog
 end
 
 bailey = Dog.new
-puts bailey.bark 
+puts bailey.bark
+
+
+class Cat
+  def miaow
+    return "Miaow! I want to kill Jordan, Miaow"
+  end
+end
+
+herbie = Cat.new
+puts herbie.miaow
