@@ -1,6 +1,6 @@
 class Monster
 
-  def legs=(number_of_legs)
+  def initialize(number_of_legs)
     @number_of_legs = number_of_legs
   end
 
@@ -13,8 +13,7 @@ class Monster
   end
 end
 
-  monster = Monster.new
-  monster.legs = 4
+  monster = Monster.new(4)
   puts monster.walk
   monster.add_legs
   puts monster.walk
