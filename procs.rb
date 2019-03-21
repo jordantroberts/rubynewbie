@@ -31,3 +31,13 @@ a_cubes, b_cubes, c_cubes = [a, b, c].map { |array| array.map(&cubes)} #creates 
 p a_cubes
 p b_cubes
 p c_cubes
+
+
+
+#Procs can also be used with boolean values:
+
+ages = [10, 60, 83, 30, 43, 25]
+
+is_old = Proc.new { |age| age > 55 }
+
+p ages.select(&is_old) #=> [60, 83]
