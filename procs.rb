@@ -41,3 +41,4 @@ ages = [10, 60, 83, 30, 43, 25]
 is_old = Proc.new { |age| age > 55 }
 
 p ages.select(&is_old) #=> [60, 83]
+p ages.reject(&is_old) #=> [10, 30, 43, 25]
