@@ -8,17 +8,18 @@
 # * `puts`es these numbers, one per line.
 
 def fib(n)
-  return n if n < 2 #Allows us to weed out any n-values that would give us negative values. Fib(0) and fib (1) would give us negative values. 
-  fib(n - 1) + fib(n - 2) #The value of the nth term in Fibonacci series is equal to the sum of the previous two terms.
-  #E.g. if fibonacci(n) = 21, the value of n represents an ordered place value, an index. If we look at fibonacci as an array:
-  #[0, 1, 1, 2, 3, 5, 8, 13, 21], 21 is the 8th index of the array.
-  #Fibonacci(8) = 21 = Fibonacci(7) + Fibonacci (6) = 13 + 8.
+  return n if n < 2 #Allows us to weed out any n-values that would give us negative values. Fib(0) and fib (1) would give us negative values.
+  fib(n - 1) + fib(n - 2)
 end
-(0..19).each { |n| puts fib(n) }
+(
+#So if n = 5:
+#fib(5)
+#not lesss than 2 so goes to next bit
+#fib(4) + fib(3) which just calls another method again so:
+#fib(4) will be fib(3) + fib(2) and fib(3) will be fib(2) + fib(1)
+#fib(3) = fib(2) + fib(1) and fib(2) = fib(1) + fib(0) etc
+#fib(1) and fib(0) are both less than 2 so they return themselves.
+#Work out the values going back up e.g. fib(2) will be fib(1) + fib(0) = 1
 
-#Pseudo-coding it
-#input n
-#if n = 1, we want to output 1
-#if n = 2, we want to output 1
-#if n > 2, we want to output the sum of the previous 2 values
-#print the output of n
+
+0..19).each { |n| puts fib(n) }
